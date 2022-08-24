@@ -1,7 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Footer from './footer';
 
 import './home.scss';
+import Loginbox from './Loginbox';
+import SignInBox from './signInBox';
+import WelcomeText from './welcomeText';
 
 const Home = (props) => {
   return (
@@ -17,52 +21,14 @@ const Home = (props) => {
       </nav>
       <div className="container">
         <div className="row">
-          <div className='col-7' id="welcome-text">
-            <h1 className=''><strong>Welcome to Twitter</strong></h1>
-            <br />
-            <p>Connect with your friends and other fascinating people. Get in the moment updates on the things that interest you. And watch events unfold, in real time, from every angle.</p>
-            <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis mollitia minus ea facilis consectetur sunt, voluptatum excepturi quia dolor tempore vero dolores id a nemo libero, consequuntur quaerat laudantium! Nostrum!</p>
-            <br />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse nemo, voluptatum error omnis necessitatibus deleniti impedit, nostrum minus eos facilis nam officia illo fugiat aperiam a reprehenderit assumenda, ullam sit?</p>
-          </div>
+          <WelcomeText />
           <div className="log-in col-5">
-            <div className='card p-2 mb-2 border rounded border-primary shadow'>
-              <div className='log-in-title card-title'><h4>Login Here</h4></div>
-              <form>
-                <div className="form-group">
-                  <input type="text" className="form-control username mb-2 border border-primary" placeholder="Username"/>
-                </div>
-                <div className="form-group col-xs-8">
-                  <input type="password" className="form-control password my-2 border border-primary" placeholder="Password"/>
-                </div>
-                <button id="log-in-btn" className="btn btn-default btn-primary col-xs-3 float-right">Log in</button>
-              </form>
-            </div>
-            <div className='card p-2 shadow mt-5 border border-primary'>
-              <div className='sign-in-title card-title'><h4>Sign up Here</h4></div>
-              <form>
-                <div className="form-group">
-                  <input type="text" className="form-control username mb-2 border border-primary" placeholder="Username"/>
-                </div>
-                <div className="form-group col-xs-8">
-                  <input type="email" className="form-control password my-2 border border-primary" placeholder="Email"/>
-                </div>
-                <div className="form-group col-xs-8">
-                  <input type="password" className="form-control password my-2 border border-primary" placeholder="Password"/>
-                </div>
-                <button id="sign-in-btn" className="btn btn-default btn-primary col-xs-3">Sign up</button>
-              </form>
-            </div>
+            <Loginbox />
+            <SignInBox />
           </div>
         </div>
       </div>
-
-      <footer className="p-3 bg-transparent">
-        <div className="container">
-          <span className="me-3 text-secondary">Built by <a href="https://github.com/JordanReady/full_stack_twitter_clone" target="_blank" rel="noopener noreferrer">Jordan</a> with ☕ and 💜</span>
-        </div>
-      </footer>
+      <Footer />
     </React.Fragment>
   );
 }
