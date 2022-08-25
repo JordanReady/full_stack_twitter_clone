@@ -1,14 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-function ProfileCard() {
+function ProfileCard(props) {
   return (
     <React.Fragment>
     <div className="profileCard border border-primary rounded shadow mb-3">
         <div className="profileCard-content">
             <div className="user-field">
-                <a className="username text-decoration-none ps-2 text-muted fw-bold" href="#">User</a>
+                <a className="username text-decoration-none ps-2 text-muted fw-bold" href="#">{props.username}</a>
                 <br/>
-                <a className="screenName text-decoration-none ps-2 text-muted" href="#">@User</a>
+                <a className="screenName text-decoration-none ps-2 text-muted" href="#">@{props.username}</a>
             </div>
             <div className="user-stats row m-0">
                 <div className="col-3 d-flex justify-content-around ms-1">
@@ -35,5 +36,14 @@ function ProfileCard() {
     </React.Fragment>
   )
 }
+
+ProfileCard.defaultProps = {
+    username: 'Jready12'
+}
+
+ProfileCard.propTypes = {
+    username: PropTypes.string
+}
+
 
 export default ProfileCard

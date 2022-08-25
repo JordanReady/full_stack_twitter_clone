@@ -2,7 +2,8 @@ import React from 'react'
 import Tweet from './tweet'
 import Tweetbox from './tweetbox'
 
-function Feedbox() {
+
+function Feedbox(props) {
   return (
     <React.Fragment>
         <div className="col-9 feed-box border border-primary rounded shadow">
@@ -22,5 +23,8 @@ function Feedbox() {
     </React.Fragment>
   )
 }
+
+
+
 
 export default Feedbox

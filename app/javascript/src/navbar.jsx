@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 function Navbar(props) {
   return (
     <React.Fragment>
-        <nav className="navbar navbar-default navbar-fixed-top">
+    <nav className="navbar navbar-default navbar-fixed-top shadow-sm mb-3">
         <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="#">
@@ -22,9 +23,9 @@ function Navbar(props) {
           </div>
           <ul className="nav navbar-nav ms-2">
             <li className="dropdown">
-              <a href="#" className="dropdown-toggle text-decoration-none" data-toggle="dropdown" role="button" aria-expanded="false"><span id="user-icon" className=''>User</span></a>
+              <a href="#" className="dropdown-toggle text-decoration-none" data-toggle="dropdown" role="button" aria-expanded="false"><span id="{props.username}-icon" className=''>{props.username}</span></a>
               <ul className="dropdown-menu row" role="menu">
-                <li ><a href="#" className="username">User</a></li>
+                <li ><a href="#" className="username">{props.username}</a></li>
                 <li role="presentation" className="divider"></li>
                 <li ><a href="#">Lists</a></li>
                 <li role="presentation" className="divider"></li>
@@ -37,9 +38,17 @@ function Navbar(props) {
             </li>
           </ul>
         </div>
-      </nav>
+    </nav>
     </React.Fragment>
   )
+}
+
+Navbar.defaultProps = {
+    username: 'Jready12'
+}
+
+Navbar.propTypes = {
+    username: PropTypes.string
 }
 
 export default Navbar
