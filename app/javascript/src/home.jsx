@@ -3,9 +3,10 @@ import ReactDOM from 'react-dom'
 import Footer from './footer';
 
 import './home.scss';
-import Loginbox from './Loginbox';
+import Loginbox from './loginbox';
 import SignInBox from './signInBox';
 import WelcomeText from './welcomeText';
+
 
 const Home = (props) => {
   return (

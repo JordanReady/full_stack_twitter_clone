@@ -1,7 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { safeCredentials, handleErrors } from '../utils/fetchHelper'
 
 function ProfileCard(props) {
+
   return (
     <React.Fragment>
     <div className="profileCard border border-primary rounded shadow mb-3">

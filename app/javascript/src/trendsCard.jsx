@@ -1,6 +1,7 @@
 import React from 'react'
 
 function TrendsCard() {
+  
   return (
     <React.Fragment>
         <div className="trends border border-primary rounded mb-3 shadow">
