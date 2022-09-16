@@ -9,21 +9,13 @@ function Feedbox(props) {
         <div className="col-9 feed-box border border-primary rounded shadow">
             <Tweetbox />
             <div className="feed mt-5">
-              <Tweet />
-              <Tweet />
-              <Tweet />
-              <Tweet />
-              <Tweet />
-              <Tweet />
-              <Tweet />
-              <Tweet />
-              <Tweet />
+                <Tweet />
+                <Tweet />
             </div>
           </div>
     </React.Fragment>
   )
 }
-
 
 
 
