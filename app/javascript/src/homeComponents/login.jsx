@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { safeCredentials, handleErrors } from '../utils/fetchHelper';
 
-class Loginbox extends Component{
+class LoginBox extends Component{
   constructor() {
     super()
     this.setState = {
@@ -61,4 +61,4 @@ class Loginbox extends Component{
   }
 }
 
-export default Loginbox
+export default LoginBox

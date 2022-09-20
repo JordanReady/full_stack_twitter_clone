@@ -28,6 +28,7 @@ const Home = (props) => {
             <SignInBox />
           </div>
         </div>
+        <Footer />
       </div>
       
     </React.Fragment>
