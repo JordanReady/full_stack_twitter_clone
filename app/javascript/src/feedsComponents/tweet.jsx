@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { safeCredentials, handleErrors } from '../../utils/fetchHelper'
+import { safeCredentials, handleErrors } from '../utils/fetchHelper'
 
 
 function Tweet (props) {

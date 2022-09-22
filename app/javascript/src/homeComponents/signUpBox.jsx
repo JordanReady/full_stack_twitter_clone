@@ -1,5 +1,5 @@
 import React from 'react'
-import { safeCredentials, handleErrors } from '../../utils/fetchHelper';
+import { safeCredentials, handleErrors } from '../utils/fetchHelper';
 
 class SignUpBox extends React.Component {
     constructor(props) {
