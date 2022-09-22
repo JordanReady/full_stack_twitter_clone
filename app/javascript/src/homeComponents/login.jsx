@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { safeCredentials, handleErrors } from '../utils/fetchHelper';
+import { safeCredentials, handleErrors } from '../../utils/fetchHelper';
 
 class LoginBox extends Component{
   constructor() {
