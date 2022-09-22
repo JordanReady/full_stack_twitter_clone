@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Component } from 'react';
-import { safeCredentials, handleErrors } from '../../utils/fetchHelper';
+import { safeCredentials, handleErrors } from '../utils/fetchHelper';
 import Navbar from './navbar';
-import ProfileCard from '../profileCard';
+import ProfileCard from './profileCard';
 import TrendsCard from './trendsCard';
-import Feedbox from '../feedbox';
+import Feedbox from './feedbox';
 
 import './feeds.scss';
 

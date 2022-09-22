@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Footer from './footer';
 import './home.scss';
 import LoginBox from './login';
-import SignInBox from './signInBox';
+import SignUpBox from './signUpBox';
 import WelcomeText from './welcomeText';
 
 
@@ -25,7 +25,7 @@ const Home = (props) => {
           <WelcomeText />
           <div className="log-in col-5">
             <LoginBox />
-            <SignInBox />
+            <SignUpBox />
           </div>
         </div>
         <Footer />
