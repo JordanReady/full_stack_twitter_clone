@@ -8,7 +8,7 @@ import TrendsCard from './trendsCard';
 import Feedbox from '../feedbox';
 
 import './feeds.scss';
-import Footer from './footer';
+
 
 class Feeds extends Component {
   constructor(props) {
@@ -133,7 +133,6 @@ class Feeds extends Component {
             <Feedbox />
           </div>
         </div>
-        <Footer />
       </React.Fragment>
     )
   } 
