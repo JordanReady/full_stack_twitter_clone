@@ -82,7 +82,7 @@ class SignUpBox extends React.Component {
         <React.Fragment>
             <div className='card p-2 shadow mt-5 border border-primary'>
                 <div className='sign-in-title card-title'><h4>Sign up Here</h4></div>
-                <form id='signup-form'>
+                <form id='signup-form'onSubmit={this.handleSubmit}>
                 <div className="form-group">
                     <input type="text" value={this.state.username} className="form-control username mb-2 border border-primary" placeholder="Username"/>
                 </div>
