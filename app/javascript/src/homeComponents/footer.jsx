@@ -1,10 +1,5 @@
 import React from 'react'
 
-const showMeSomething = () => {
-  console.log('something');
-}
-showMeSomething();
-
 function Footer() {
   return (
     <React.Fragment>

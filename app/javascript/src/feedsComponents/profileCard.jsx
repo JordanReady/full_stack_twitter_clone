@@ -1,25 +1,42 @@
 import React from 'react'
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'
-import { safeCredentials, handleErrors } from '../utils/fetchHelper'
+import { Component } from 'react'
+import { safeCredentials, handleErrors } from '../utils/fetchHelper';
+
 
 class ProfileCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: '',
-        }
+            username: 'user',
+        };
+
+        this.getUsername = this.getUsername.bind(this);
     }
 
+    componentDidMount() {
+        this.getUsername();
+        }
+
+    getUsername() {
+        fetch('/api/authenticated', safeCredentials({
+            method: 'GET',
+        }))
+        .then(handleErrors)
+        .then(data => {
+            this.setState({ 
+            username: data.username });
+        })
+        }
+
     render() {
+        const { username } = this.state;
         return (
-            <React.Fragment>
             <div className="profileCard border border-primary rounded shadow mb-3">
                 <div className="profileCard-content">
                     <div className="user-field">
-                        <a className="username text-decoration-none ps-2 text-muted fw-bold" href="#">{this.state.username}</a>
+                        <a className="username text-decoration-none ps-2 text-muted fw-bold" href="#">{username}</a>
                         <br/>
-                        <a className="screenName text-decoration-none ps-2 text-muted" href="#">@{this.state.username}</a>
+                        <a className="screenName text-decoration-none ps-2 text-muted" href="#">@{username}</a>
                     </div>
                     <div className="user-stats row m-0">
                         <div className="col-3 d-flex justify-content-around ms-1">
@@ -43,11 +60,8 @@ class ProfileCard extends Component {
                     </div>
                 </div>
             </div>
-            </React.Fragment>
         )
+    }
 }
-
-}
-
 
 export default ProfileCard

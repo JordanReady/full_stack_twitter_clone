@@ -11,6 +11,8 @@ function Feedbox(props) {
             <div className="feed mt-5">
                 <Tweet />
                 <Tweet />
+                <Tweet />
+                <Tweet />
             </div>
           </div>
     </React.Fragment>

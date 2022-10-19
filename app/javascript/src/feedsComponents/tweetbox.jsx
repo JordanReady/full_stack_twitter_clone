@@ -1,19 +1,74 @@
 import React from 'react'
+import { safeCredentialsFormData, handleErrors } from '../utils/fetchHelper';
 
-const Tweetbox = ({handleChanges, handleSubmit, message}) => {
-  return (
-    <React.Fragment>
-      <div className="tweet-box">
-        <form onSubmit={handleSubmit}>
-          <textarea onChange={handleChanges} type="text" className="form-control post-input mt-2" rows="3" placeholder="What's happening?" value={message}></textarea>
-            <div className="float-end mt-1">
-              <span className="post-char-counter me-1">140</span>
-              <button className="btn btn-primary" id="tweet-btn">Tweet</button>
-            </div>
-        </form>
-      </div>
-    </React.Fragment>
-  )
+
+class Tweetbox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: '',
+            username: '',
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.getUsername = this.getUsername.bind(this);
+    }
+
+    componentDidMount() {
+      this.getUsername();
+    }
+
+    getUsername = () => {
+      fetch('/api/authenticated', safeCredentials({
+        method: 'GET',
+      }))
+      .then(handleErrors)
+      .then(data => {
+        this.setState({
+          username: data.username
+        });
+      })
+    }
+
+    handleChange = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value });
+    }
+
+    handleSubmit = (e) => {
+      e.preventDefault();
+  
+      let formData = new FormData();
+      formData.append('tweet[message]', this.state.message)
+  
+      fetch('/api/tweets', safeCredentialsFormData({
+        method: 'POST',
+        body: formData,
+      }))
+        .then(handleErrors)
+        .then(data => {
+          console.log('data', data)
+          
+        })
+        .catch(error => {
+          alert(error);
+        });
+    }
+
+    render() {
+      
+      return (
+          <div className="tweet-box border border-primary rounded shadow mt-2">
+            <form onSubmit={this.handleSubmit}>
+              <div className="form-group">
+                  <textarea className="form-control"  rows="3" name="message" value={this.message} onChange={this.handleChange} placeholder="What's happening?" ></textarea>
+              </div>
+              <button type="submit" className="btn btn-primary float-end shadow my-2">Tweet</button>
+            </form>
+          </div>
+      )
+  }
 }
 
 export default Tweetbox
